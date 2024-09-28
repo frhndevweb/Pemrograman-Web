@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Materi CSS</title>
+</head>
+<body>
+    <header>
+        <h1>Materi tentang CSS</h1>
+    </header>
+    <main class="container">
+        <h2>Pengenalan CSS</h2>
+        <p>CSS (Cascading Style Sheets) digunakan untuk mendesain dan mengatur tata letak halaman web.</p>
+
+        <h2>Sejarah Singkat CSS</h2>
+        <p>CSS pertama kali diperkenalkan oleh Håkon Wium Lie pada tahun 1994. Tujuannya adalah untuk memisahkan konten dari presentasi, sehingga memudahkan pengelolaan dan pemeliharaan situs web. Sejak saat itu, CSS terus berkembang, dengan versi terbaru yaitu CSS3 yang menawarkan berbagai fitur baru seperti animasi, transisi, dan model layout yang lebih fleksibel.</p>
+
+        <h2>Menambahkan CSS</h2>
+        <p>CSS dapat ditambahkan dengan tiga cara:</p>
+        <ul>
+            <li>Inline: &lt;h1 style="color:blue;"&gt;Judul&lt;/h1&gt;</li>
+            <li>Internal: &lt;style&gt;h1 { color: blue; }&lt;/style&gt;</li>
+            <li>External: &lt;link rel="stylesheet" href="style.css"&gt;</li>
+        </ul>
+
+        <h2>Selektor CSS</h2>
+        <pre>
+/* Selektor Kelas */
+.classname {
+    color: red;
+}
+
+/* Selektor ID */
+#idname {
+    font-size: 20px;
+}
+
+/* Selektor Elemen */
+p {
+    margin: 10px;
+}
+        </pre>
+
+        <h2>Layout dengan Flexbox</h2>
+        <pre>
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    flex: 1;
+    margin: 10px;
+}
+        </pre>
+
+        <h4>Contoh Kode CSS:</h4>
+        <pre>body { background-color: #f4f4f4; }</pre>
+
+        <button onclick="window.location.href='index.html'">Back</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 hannaaffiii</p>
+    </footer>
+</body>
+</html>

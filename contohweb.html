@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Penggunaan Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .example {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <h1>Contoh Penggunaan Web</h1>
+    <p>Berikut adalah beberapa contoh penggunaan teknologi web seperti CSS, JavaScript, Python, PHP, dan C++.</p>
+    </header>
+    <div class="example">
+        <h2>1. CSS (Cascading Style Sheets)</h2>
+        <p>CSS digunakan untuk menata elemen-elemen HTML.</p>
+        <pre>
+/* Contoh penggunaan CSS */
+body {
+    background-color: lightblue;
+}
+h1 {
+    color: navy;
+    font-size: 2em;
+}
+p {
+    color: darkgray;
+}
+        </pre>
+    </div>
+
+    <div class="example">
+        <h2>2. JavaScript</h2>
+        <p>JavaScript digunakan untuk membuat halaman web interaktif.</p>
+        <button onclick="changeText()">Klik Saya</button>
+        <p id="js-demo">Ini adalah teks yang akan berubah.</p>
+        <script>
+            function changeText() {
+                document.getElementById("js-demo").innerHTML = "Teks telah berubah!";
+            }
+        </script>
+    </div>
+
+    <div class="example">
+        <h2>3. Python (Server-Side)</h2>
+        <p>Python biasanya digunakan di sisi server, berikut adalah contoh sederhana dengan Flask:</p>
+        <pre>
+# app.py (Flask)
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello, Python Flask!"
+
+if __name__ == "__main__":
+    app.run()
+        </pre>
+    </div>
+
+    <div class="example">
+        <h2>4. PHP (Server-Side)</h2>
+        <p>PHP digunakan untuk menangani logika di sisi server.</p>
+        <pre>
+&lt;?php
+    echo "Hello, World from PHP!";
+?&gt;
+        </pre>
+    </div>
+
+    <div class="example">
+        <h2>5. C++ (Ilustrasi Konsep)</h2>
+        <p>C++ biasanya digunakan untuk pemrograman sistem atau aplikasi desktop. Berikut contoh sederhana C++ yang tidak berjalan di web browser:</p>
+        <pre>
+// contoh.cpp
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, World from C++!" &lt;&lt; endl;
+    return 0;
+}
+        </pre>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 hannaaffiii</p>
+        <p><a href="index.html">Kembali</a></p>
+    </footer>
+</body>
+</html>
