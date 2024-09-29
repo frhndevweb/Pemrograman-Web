@@ -29,9 +29,11 @@
 </head>
 <body>
     <header>
-    <h1>Contoh Penggunaan Web</h1>
-    <p>Berikut adalah beberapa contoh penggunaan teknologi web seperti CSS, JavaScript, Python, PHP, dan C++.</p>
+        <h1>Contoh Penggunaan Web</h1>
+        <p>Berikut adalah beberapa contoh penggunaan teknologi web seperti CSS, JavaScript, Python, PHP, C++, dan C#.</p>
     </header>
+
+    <!-- CSS Example -->
     <div class="example">
         <h2>1. CSS (Cascading Style Sheets)</h2>
         <p>CSS digunakan untuk menata elemen-elemen HTML.</p>
@@ -50,6 +52,7 @@ p {
         </pre>
     </div>
 
+    <!-- JavaScript Example -->
     <div class="example">
         <h2>2. JavaScript</h2>
         <p>JavaScript digunakan untuk membuat halaman web interaktif.</p>
@@ -62,6 +65,7 @@ p {
         </script>
     </div>
 
+    <!-- Python Example -->
     <div class="example">
         <h2>3. Python (Server-Side)</h2>
         <p>Python biasanya digunakan di sisi server, berikut adalah contoh sederhana dengan Flask:</p>
@@ -80,6 +84,7 @@ if __name__ == "__main__":
         </pre>
     </div>
 
+    <!-- PHP Example -->
     <div class="example">
         <h2>4. PHP (Server-Side)</h2>
         <p>PHP digunakan untuk menangani logika di sisi server.</p>
@@ -90,6 +95,7 @@ if __name__ == "__main__":
         </pre>
     </div>
 
+    <!-- C++ Example -->
     <div class="example">
         <h2>5. C++ (Ilustrasi Konsep)</h2>
         <p>C++ biasanya digunakan untuk pemrograman sistem atau aplikasi desktop. Berikut contoh sederhana C++ yang tidak berjalan di web browser:</p>
@@ -105,9 +111,39 @@ int main() {
         </pre>
     </div>
 
+    <!-- C# Example -->
+    <div class="example">
+        <h2>6. C# (ASP.NET Core)</h2>
+        <p>C# digunakan untuk membuat aplikasi web dengan framework ASP.NET Core. Berikut adalah contoh controller sederhana di C#:</p>
+        <pre>
+// HomeController.cs
+using Microsoft.AspNetCore.Mvc;
+
+namespace WebApp.Controllers
+{
+    public class HomeController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult About()
+        {
+            ViewData["Message"] = "Halaman tentang aplikasi ini.";
+            return View();
+        }
+    }
+}
+        </pre>
+        <p>Untuk menjalankan aplikasi ini, pastikan Anda memiliki lingkungan ASP.NET Core dan .NET SDK yang sesuai.</p>
+    </div>
+    <main class="container">
+    <button onclick="window.location.href='index.html'">Back</button>
+    </main>
+
     <footer>
         <p>&copy; 2024 hannaaffiii</p>
-        <p><a href="index.html">Kembali</a></p>
     </footer>
 </body>
 </html>
