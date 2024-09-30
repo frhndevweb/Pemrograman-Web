@@ -70,6 +70,39 @@ person = {"name": "Hannaaffiii", "age": 17}
 print(person["name"])
         </pre>
 
+        <h2>Modul dan Pustaka Eksternal</h2>
+        <p>Anda dapat mengimpor modul untuk menggunakan fungsionalitas tambahan:</p>
+        <pre>
+import math
+
+print(math.sqrt(16))  # Menghitung akar kuadrat
+        </pre>
+        <p>Untuk menginstal pustaka eksternal, gunakan pip:</p>
+        <pre>pip install nama_pustaka</pre>
+
+        <h2>Pemrograman Berorientasi Objek (OOP)</h2>
+        <pre>
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        return f"Hello, my name is {self.name}."
+
+hanna = Person("Hannaaffiii", 17)
+print(hanna.greet())
+        </pre>
+
+        <h2>Penanganan Kesalahan</h2>
+        <p>Gunakan <code>try</code> dan <code>except</code> untuk menangani kesalahan:</p>
+        <pre>
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Tidak bisa membagi dengan nol!")
+        </pre>
+
         <button onclick="window.location.href='next.html'">Back</button>
     </main>
     <footer>
