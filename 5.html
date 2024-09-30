@@ -29,7 +29,7 @@ echo "Hello, World!";
 $nama = "hannaaffiii";  // String
 $umur = 17;      // Integer
 $tinggi = 1.75;  // Float
-$mahasiswa = Pelajar; // Boolean
+$mahasiswa = true; // Boolean
         </pre>
 
         <h2>Fungsi</h2>
@@ -71,6 +71,52 @@ $associativeArray = array(
     "umur" => 17
 );
 echo $associativeArray["nama"];
+        </pre>
+
+        <h2>Superglobals</h2>
+        <pre>
+echo $_SERVER['PHP_SELF']; // Menampilkan nama file saat ini
+echo $_GET['nama']; // Mengakses data dari URL
+echo $_POST['nama']; // Mengakses data dari formulir
+        </pre>
+
+        <h2>Penanganan Formulir</h2>
+        <pre>
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nama = $_POST['nama'];
+    echo "Nama Anda adalah: $nama";
+}
+        </pre>
+        <p>Contoh formulir:</p>
+        <pre>
+&lt;form method="POST" action="process.php"&gt;
+    &lt;input type="text" name="nama"&gt;
+    &lt;input type="submit" value="Kirim"&gt;
+&lt;/form&gt;
+        </pre>
+
+        <h2>Koneksi Database dengan PDO</h2>
+        <pre>
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=database_name', 'username', 'password');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $pdo->query('SELECT * FROM users');
+
+    while ($row = $stmt->fetch()) {
+        echo $row['name'];
+    }
+} catch (PDOException $e) {
+    echo 'Connection failed: ' . $e->getMessage();
+}
+        </pre>
+
+        <h2>Penanganan Kesalahan</h2>
+        <pre>
+set_error_handler(function ($errno, $errstr) {
+    echo "Error: [$errno] $errstr";
+});
+
+echo $undefinedVariable; // Ini akan memicu kesalahan
         </pre>
 
         <button onclick="window.location.href='next.html'">Back</button>
