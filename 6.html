@@ -48,7 +48,82 @@ for (int i = 0; i < 5; i++) {
     System.out.println("Iterasi ke-" + i);
 }
         </pre>
+
+        <h2>Struktur Kontrol</h2>
+        <h4>Contoh If-Else:</h4>
+        <pre>
+if (age >= 17) {
+    System.out.println("Dewasa");
+} else {
+    System.out.println("Anak-anak");
+}
+        </pre>
         
+        <h4>Contoh Switch:</h4>
+        <pre>
+switch (age) {
+    case 17:
+        System.out.println("Usia 17 tahun");
+        break;
+    default:
+        System.out.println("Usia tidak terdefinisi");
+}
+        </pre>
+
+        <h2>Metode dalam Java</h2>
+        <pre>
+public static void greet(String name) {
+    System.out.println("Hello, " + name + "!");
+}
+
+// Memanggil metode
+greet("Hannaaffiii");
+        </pre>
+
+        <h2>Penanganan Exception</h2>
+        <pre>
+try {
+    int[] numbers = {1, 2, 3};
+    System.out.println(numbers[5]); // Ini akan menimbulkan ArrayIndexOutOfBoundsException
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("Kesalahan: " + e.getMessage());
+}
+        </pre>
+
+        <h2>Koleksi dalam Java</h2>
+        <pre>
+import java.util.ArrayList;
+
+ArrayList<String> fruits = new ArrayList<>();
+fruits.add("apel");
+fruits.add("jeruk");
+fruits.add("pisang");
+
+for (String fruit : fruits) {
+    System.out.println(fruit);
+}
+        </pre>
+
+        <h2>Pemrograman Berorientasi Objek (OOP)</h2>
+        <pre>
+class Person {
+    String name;
+    int age;
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void display() {
+        System.out.println("Nama: " + name + ", Umur: " + age);
+    }
+}
+
+Person hanna = new Person("Hannaaffiii", 17);
+hanna.display();
+        </pre>
+
         <button onclick="window.location.href='next.html'">Back</button>
     </main>
     <footer>
