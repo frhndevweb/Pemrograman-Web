@@ -30,7 +30,7 @@
 <body>
     <header>
         <h1>Contoh Penggunaan Web</h1>
-        <p>Berikut adalah beberapa contoh penggunaan teknologi web seperti HTML, CSS, JavaScript, Python, PHP, Java, C++, C#, dan Go (Golang).</p>
+        <p>Berikut adalah beberapa contoh penggunaan teknologi web seperti CSS, JavaScript, Python, PHP, C++, dan C#.</p>
     </header>
 
     <!-- HTML Example -->
@@ -52,6 +52,7 @@
 &lt;/body&gt;
 &lt;/html&gt;
         </pre>
+        <p>Berikut adalah struktur halaman HTML sederhana:</p>
         <h3>Output Contoh HTML:</h3>
         <h1>Selamat Datang</h1>
         <p>Ini adalah contoh halaman HTML sederhana.</p>
@@ -120,6 +121,7 @@ if __name__ == "__main__":
     echo "Hello, World from PHP!";
 ?&gt;
         </pre>
+        <p>Jika Anda menjalankan script ini di server, hasilnya akan menampilkan: <strong><?php echo "Hello, World from PHP!"; ?></strong></p>
     </div>
 
     <!-- Java Example -->
@@ -144,7 +146,7 @@ public class HelloWorldServlet extends HttpServlet {
     <!-- C++ Example -->
     <div class="example">
         <h2>7. C++ (Ilustrasi Konsep)</h2>
-        <p>C++ biasanya digunakan untuk pemrograman sistem atau aplikasi desktop. Berikut contoh sederhana C++:</p>
+        <p>C++ biasanya digunakan untuk pemrograman sistem atau aplikasi desktop. Berikut contoh sederhana C++ yang tidak berjalan di web browser:</p>
         <pre>
 // contoh.cpp
 #include &lt;iostream&gt;
@@ -182,13 +184,36 @@ namespace WebApp.Controllers
     }
 }
         </pre>
+        <p>Untuk menjalankan aplikasi ini, pastikan Anda memiliki lingkungan ASP.NET Core dan .NET SDK yang sesuai.</p>
     </div>
 
-    <!-- Go (Golang) Example -->
+    <!-- Ruby Example -->
     <div class="example">
-        <h2>9. Go (Golang)</h2>
-        <p>Go digunakan untuk membangun aplikasi web dengan performa tinggi. Berikut contoh sederhana menggunakan package <code>net/http</code>:</p>
+        <h2>9. Ruby (Sinatra)</h2>
+        <p>Ruby juga bisa digunakan untuk membuat aplikasi web, salah satunya dengan menggunakan framework Sinatra. Berikut contoh sederhana:</p>
         <pre>
+# app.rb
+require 'sinatra'
+
+get '/' do
+  "Hello, Ruby Sinatra!"
+end
+
+get '/about' do
+  "Ini adalah halaman tentang aplikasi ini."
+end
+        </pre>
+        <p>Untuk menjalankan aplikasi ini, buka terminal Anda dan jalankan perintah berikut:</p>
+        <pre>
+gem install sinatra
+ruby app.rb
+        </pre>
+    </div>
+        <!-- Golang Example -->
+<div class="example">
+    <h2>10. Golang (Server-Side)</h2>
+    <p>Golang juga bisa digunakan untuk membuat server web sederhana. Berikut adalah contoh penggunaannya:</p>
+    <pre>
 package main
 
 import (
@@ -202,12 +227,14 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
     http.HandleFunc("/", handler)
+    fmt.Println("Server berjalan di http://localhost:8080")
     http.ListenAndServe(":8080", nil)
 }
-        </pre>
-        <p>Untuk menjalankan contoh ini, jalankan perintah <code>go run main.go</code> dan akses <code>http://localhost:8080</code> di browser Anda.</p>
-    </div>
+    </pre>
+    <p>Jalankan script ini, lalu buka browser dan kunjungi <strong>http://localhost:8080</strong> untuk melihat hasilnya.</p>
+</div>
 
+    
     <main class="container">
         <button onclick="window.location.href='next.html'">Back</button>
     </main>
