@@ -30,7 +30,7 @@
 <body>
     <header>
         <h1>Contoh Penggunaan Web</h1>
-        <p>Berikut adalah beberapa contoh penggunaan teknologi web seperti CSS, JavaScript, Python, PHP, C++, dan C#.</p>
+        <p>Berikut adalah beberapa contoh penggunaan teknologi web seperti HTML, CSS, JavaScript, Python, PHP, Java, C++, C#, dan Go (Golang).</p>
     </header>
 
     <!-- HTML Example -->
@@ -52,7 +52,6 @@
 &lt;/body&gt;
 &lt;/html&gt;
         </pre>
-        <p>Berikut adalah struktur halaman HTML sederhana:</p>
         <h3>Output Contoh HTML:</h3>
         <h1>Selamat Datang</h1>
         <p>Ini adalah contoh halaman HTML sederhana.</p>
@@ -121,7 +120,6 @@ if __name__ == "__main__":
     echo "Hello, World from PHP!";
 ?&gt;
         </pre>
-        <p>Jika Anda menjalankan script ini di server, hasilnya akan menampilkan: <strong><?php echo "Hello, World from PHP!"; ?></strong></p>
     </div>
 
     <!-- Java Example -->
@@ -146,7 +144,7 @@ public class HelloWorldServlet extends HttpServlet {
     <!-- C++ Example -->
     <div class="example">
         <h2>7. C++ (Ilustrasi Konsep)</h2>
-        <p>C++ biasanya digunakan untuk pemrograman sistem atau aplikasi desktop. Berikut contoh sederhana C++ yang tidak berjalan di web browser:</p>
+        <p>C++ biasanya digunakan untuk pemrograman sistem atau aplikasi desktop. Berikut contoh sederhana C++:</p>
         <pre>
 // contoh.cpp
 #include &lt;iostream&gt;
@@ -184,9 +182,32 @@ namespace WebApp.Controllers
     }
 }
         </pre>
-        <p>Untuk menjalankan aplikasi ini, pastikan Anda memiliki lingkungan ASP.NET Core dan .NET SDK yang sesuai.</p>
     </div>
-    
+
+    <!-- Go (Golang) Example -->
+    <div class="example">
+        <h2>9. Go (Golang)</h2>
+        <p>Go digunakan untuk membangun aplikasi web dengan performa tinggi. Berikut contoh sederhana menggunakan package <code>net/http</code>:</p>
+        <pre>
+package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+func handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello, World from Golang!")
+}
+
+func main() {
+    http.HandleFunc("/", handler)
+    http.ListenAndServe(":8080", nil)
+}
+        </pre>
+        <p>Untuk menjalankan contoh ini, jalankan perintah <code>go run main.go</code> dan akses <code>http://localhost:8080</code> di browser Anda.</p>
+    </div>
+
     <main class="container">
         <button onclick="window.location.href='next.html'">Back</button>
     </main>
@@ -195,5 +216,4 @@ namespace WebApp.Controllers
         <p>&copy; 2024 hannaaffiii</p>
     </footer>
 </body>
-    </html>
-    
+</html>
