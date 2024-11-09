@@ -9,11 +9,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #e0f2ff;
+            background-color: #f5f9fc;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -22,40 +22,43 @@
 
         .maintenance-container {
             text-align: center;
-            padding: 40px;
-            max-width: 500px;
+            padding: 50px;
+            max-width: 600px;
             background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            color: #005f99;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            color: #2c3e50;
         }
 
         .maintenance-container h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #007acc;
+            color: #3498db;
         }
 
         .maintenance-container p {
-            font-size: 1.1rem;
-            color: #0066cc;
-            margin-bottom: 2rem;
-            line-height: 1.5;
+            font-size: 1.2rem;
+            color: #34495e;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
-        button {
-            background-color: #007acc;
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            background-color: #3498db;
             color: #ffffff;
-            border: none;
-            padding: 10px 20px;
+            padding: 10px 25px;
             font-size: 1rem;
             border-radius: 5px;
-            cursor: pointer;
             transition: background-color 0.3s;
         }
 
-        button:hover {
-            background-color: #005f99;
+        .button-container a:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
@@ -64,6 +67,9 @@
         <h1>Sedang Dalam Perbaikan</h1>
         <p>Kami sedang melakukan perbaikan untuk memberikan pengalaman terbaik. Mohon maaf atas ketidaknyamanannya.</p>
         <p>Server akan dibuka lagi pukul 18.00 WIB</p>
+        <div class="button-container">
+            <a href="update.html">Lihat Update</a>
+        </div>
     </div>
 </body>
 </html>
