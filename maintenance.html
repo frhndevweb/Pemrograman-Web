@@ -43,6 +43,12 @@
             line-height: 1.6;
         }
 
+        .countdown {
+            font-size: 1.5rem;
+            color: #e74c3c;
+            margin-top: 1rem;
+        }
+
         .button-container {
             margin-top: 20px;
         }
@@ -66,10 +72,38 @@
     <div class="maintenance-container">
         <h1>Sedang Dalam Perbaikan</h1>
         <p>Kami sedang melakukan perbaikan untuk memberikan pengalaman terbaik. Mohon maaf atas ketidaknyamanannya.</p>
-        <p>Server akan dibuka lagi pukul 18.00 WIB</p>
+        <p>Server akan dibuka kembali pukul 12.00 WIB</p>
+        <div class="countdown" id="countdown"></div>
         <div class="button-container">
             <a href="update.html">Lihat Update</a>
         </div>
     </div>
+
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const target = new Date();
+            target.setHours(12, 0, 0, 0);
+
+            if (now >= target) {
+                target.setDate(target.getDate() + 1);
+            }
+
+            const timeRemaining = target - now;
+
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = 
+                hours + " jam " + minutes + " menit " + seconds + " detik ";
+
+            if (timeRemaining < 0) {
+                document.getElementById("countdown").innerHTML = "Server sudah dibuka!";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
