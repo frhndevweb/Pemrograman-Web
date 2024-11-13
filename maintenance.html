@@ -72,7 +72,7 @@
     <div class="maintenance-container">
         <h1>Sedang Dalam Perbaikan</h1>
         <p>Kami sedang melakukan perbaikan untuk memberikan pengalaman terbaik. Mohon maaf atas ketidaknyamanannya.</p>
-        <p>Mohon maaf, karena ada masalah kecil jadi kami undurkan waktu bisa akses aplikasi pada pukul 18.00 WIB</p>
+        <p>Aplikasi dapat di akses lagi pada pukul 12.00 WIB</p>
         <div class="countdown" id="countdown"></div>
         <div class="button-container">
             <a href="update.html">Lihat Update</a>
@@ -83,7 +83,7 @@
         function updateCountdown() {
             const now = new Date();
             const target = new Date();
-            target.setHours(18, 0, 0, 0);
+            target.setHours(12, 0, 0, 0);
 
             if (now >= target) {
                 target.setDate(target.getDate() + 1);
