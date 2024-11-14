@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materi.css">
+    <title>Materi PHP</title>
+</head>
+<body>
+    <header>
+        <h1>Materi tentang PHP</h1>
+    </header>
+    <main class="container">
+        <h2>Pengenalan PHP</h2>
+        <p>PHP (Hypertext Preprocessor) adalah bahasa pemrograman server-side yang sering digunakan untuk pengembangan web.</p>
+
+        <h2>Instalasi PHP</h2>
+        <p>Anda dapat mengunduh PHP dari <a href="https://www.php.net/downloads">situs resmi PHP</a>. Untuk pengembangan lokal, Anda dapat menggunakan XAMPP atau WAMP.</p>
+
+        <h2>Struktur Dasar PHP</h2>
+        <pre>
+&lt;?php
+echo "Hello, World!";
+?&gt;
+        </pre>
+
+        <h2>Variabel dan Tipe Data</h2>
+        <pre>
+$nama = "hannaaffiii";  // String
+$umur = 17;      // Integer
+$tinggi = 1.75;  // Float
+$mahasiswa = true; // Boolean
+        </pre>
+
+        <h2>Fungsi</h2>
+        <pre>
+function greet($name) {
+    return "Hello, $name!";
+}
+
+echo greet("Hannaaffiii");
+        </pre>
+
+        <h2>Struktur Kontrol</h2>
+        <pre>
+if ($umur >= 17) {
+    echo "Dewasa";
+} else {
+    echo "Anak-anak";
+}
+        </pre>
+
+        <h2>Looping</h2>
+        <pre>
+for ($i = 0; $i < 5; $i++) {
+    echo $i;
+}
+
+while ($umur < 30) {
+    echo $umur;
+    $umur++;
+}
+        </pre>
+
+        <h2>Array dan Associative Array</h2>
+        <pre>
+$array = array("apel", "jeruk", "pisang");
+
+$associativeArray = array(
+    "nama" => "Hannaaffiii",
+    "umur" => 17
+);
+echo $associativeArray["nama"];
+        </pre>
+
+        <h2>Superglobals</h2>
+        <pre>
+echo $_SERVER['PHP_SELF']; // Menampilkan nama file saat ini
+echo $_GET['nama']; // Mengakses data dari URL
+echo $_POST['nama']; // Mengakses data dari formulir
+        </pre>
+
+        <h2>Penanganan Formulir</h2>
+        <pre>
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nama = $_POST['nama'];
+    echo "Nama Anda adalah: $nama";
+}
+        </pre>
+        <p>Contoh formulir:</p>
+        <pre>
+&lt;form method="POST" action="process.php"&gt;
+    &lt;input type="text" name="nama"&gt;
+    &lt;input type="submit" value="Kirim"&gt;
+&lt;/form&gt;
+        </pre>
+
+        <h2>Koneksi Database dengan PDO</h2>
+        <pre>
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=database_name', 'username', 'password');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $pdo->query('SELECT * FROM users');
+
+    while ($row = $stmt->fetch()) {
+        echo $row['name'];
+    }
+} catch (PDOException $e) {
+    echo 'Connection failed: ' . $e->getMessage();
+}
+        </pre>
+
+        <h2>Penanganan Kesalahan</h2>
+        <pre>
+set_error_handler(function ($errno, $errstr) {
+    echo "Error: [$errno] $errstr";
+});
+
+echo $undefinedVariable; // Ini akan memicu kesalahan
+        </pre>
+
+        <button onclick="window.location.href='materi.html'">Back</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 hannaaffiii</p>
+    </footer>
+</body>
+</html>

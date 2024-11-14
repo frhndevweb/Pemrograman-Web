@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Penggunaan Web</title>
+    <style>
+       body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9fd;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #0d47a1;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+
+        /* Container for content */
+        .example {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px 10%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .example h2 {
+            color: #0d47a1;
+            font-size: 1.8em;
+            border-bottom: 2px solid #0d47a1;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Styling for preformatted text (code) */
+        pre {
+            background-color: #f1f8ff;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            color: #333;
+            overflow-x: auto;
+        }
+
+        /* Button Styling */
+        button {
+            background-color: #0d47a1;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1565c0;
+        }
+
+        /* Back button (optional) */
+        .container button {
+            background-color: #1976d2;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .container button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contoh Penggunaan Web</h1>
+        <p>Berikut adalah beberapa contoh penggunaan teknologi web seperti CSS, JavaScript, Python, PHP, C++, dan C#.</p>
+    </header>
+
+    <!-- HTML Example -->
+    <div class="example">
+        <h2>1. HTML (HyperText Markup Language)</h2>
+        <p>HTML adalah bahasa markup yang digunakan untuk membuat struktur halaman web.</p>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Judul Halaman&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Selamat Datang&lt;/h1&gt;
+    &lt;p&gt;Ini adalah contoh halaman HTML sederhana.&lt;/p&gt;
+    &lt;a href="https://www.example.com"&gt;Kunjungi Example&lt;/a&gt;
+    &lt;img src="gambar.jpg" alt="Contoh Gambar"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+        <p>Berikut adalah struktur halaman HTML sederhana:</p>
+        <h3>Output Contoh HTML:</h3>
+        <h1>Selamat Datang</h1>
+        <p>Ini adalah contoh halaman HTML sederhana.</p>
+        <p><a href="https://www.example.com">Kunjungi Example</a></p>
+        <img src="https://via.placeholder.com/150" alt="Contoh Gambar">
+    </div>
+
+    <!-- CSS Example -->
+    <div class="example">
+        <h2>2. CSS (Cascading Style Sheets)</h2>
+        <p>CSS digunakan untuk menata elemen-elemen HTML.</p>
+        <pre>
+/* Contoh penggunaan CSS */
+body {
+    background-color: lightblue;
+}
+h1 {
+    color: navy;
+    font-size: 2em;
+}
+p {
+    color: darkgray;
+}
+        </pre>
+    </div>
+
+    <!-- JavaScript Example -->
+    <div class="example">
+        <h2>3. JavaScript</h2>
+        <p>JavaScript digunakan untuk membuat halaman web interaktif.</p>
+        <button onclick="changeText()">Klik Saya</button>
+        <p id="js-demo">Ini adalah teks yang akan berubah.</p>
+        <script>
+            function changeText() {
+                document.getElementById("js-demo").innerHTML = "Teks telah berubah!";
+            }
+        </script>
+    </div>
+
+    <!-- Python Example -->
+    <div class="example">
+        <h2>4. Python (Server-Side)</h2>
+        <p>Python biasanya digunakan di sisi server, berikut adalah contoh sederhana dengan Flask:</p>
+        <pre>
+# app.py (Flask)
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello, Python Flask!"
+
+if __name__ == "__main__":
+    app.run()
+        </pre>
+    </div>
+
+    <!-- PHP Example -->
+    <div class="example">
+        <h2>5. PHP (Server-Side)</h2>
+        <p>PHP digunakan untuk menangani logika di sisi server.</p>
+        <p>Berikut adalah contoh script PHP sederhana:</p>
+        <pre>
+&lt;?php
+    echo "Hello, World from PHP!";
+?&gt;
+        </pre>
+        <p>Jika Anda menjalankan script ini di server, hasilnya akan menampilkan: <strong><?php echo "Hello, World from PHP!"; ?></strong></p>
+    </div>
+
+    <!-- Java Example -->
+    <div class="example">
+        <h2>6. Java (Server-Side)</h2>
+        <p>Java juga bisa digunakan untuk membuat aplikasi web, berikut contoh servlet sederhana:</p>
+        <pre>
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class HelloWorldServlet extends HttpServlet {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("&lt;h1&gt;Hello, World from Java Servlet!&lt;/h1&gt;");
+    }
+}
+        </pre>
+    </div>
+
+    <!-- C++ Example -->
+    <div class="example">
+        <h2>7. C++ (Ilustrasi Konsep)</h2>
+        <p>C++ biasanya digunakan untuk pemrograman sistem atau aplikasi desktop. Berikut contoh sederhana C++ yang tidak berjalan di web browser:</p>
+        <pre>
+// contoh.cpp
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, World from C++!" &lt;&lt; endl;
+    return 0;
+}
+        </pre>
+    </div>
+
+    <!-- C# Example -->
+    <div class="example">
+        <h2>8. C# (ASP.NET Core)</h2>
+        <p>C# digunakan untuk membuat aplikasi web dengan framework ASP.NET Core. Berikut adalah contoh controller sederhana di C#:</p>
+        <pre>
+// HomeController.cs
+using Microsoft.AspNetCore.Mvc;
+
+namespace WebApp.Controllers
+{
+    public class HomeController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult About()
+        {
+            ViewData["Message"] = "Halaman tentang aplikasi ini.";
+            return View();
+        }
+    }
+}
+        </pre>
+        <p>Untuk menjalankan aplikasi ini, pastikan Anda memiliki lingkungan ASP.NET Core dan .NET SDK yang sesuai.</p>
+    </div>
+
+    <!-- Ruby Example -->
+    <div class="example">
+        <h2>9. Ruby (Sinatra)</h2>
+        <p>Ruby juga bisa digunakan untuk membuat aplikasi web, salah satunya dengan menggunakan framework Sinatra. Berikut contoh sederhana:</p>
+        <pre>
+# app.rb
+require 'sinatra'
+
+get '/' do
+  "Hello, Ruby Sinatra!"
+end
+
+get '/about' do
+  "Ini adalah halaman tentang aplikasi ini."
+end
+        </pre>
+        <p>Untuk menjalankan aplikasi ini, buka terminal Anda dan jalankan perintah berikut:</p>
+        <pre>
+gem install sinatra
+ruby app.rb
+        </pre>
+    </div>
+        <!-- Golang Example -->
+<div class="example">
+    <h2>10. Golang (Server-Side)</h2>
+    <p>Golang juga bisa digunakan untuk membuat server web sederhana. Berikut adalah contoh penggunaannya:</p>
+    <pre>
+package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+func handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello, World from Golang!")
+}
+
+func main() {
+    http.HandleFunc("/", handler)
+    fmt.Println("Server berjalan di http://localhost:8080")
+    http.ListenAndServe(":8080", nil)
+}
+    </pre>
+    <p>Jalankan script ini, lalu buka browser dan kunjungi <strong>http://localhost:8080</strong> untuk melihat hasilnya.</p>
+</div>
+<!-- Laravel Example -->
+<div class="example">
+    <h2>11. Laravel (PHP Framework)</h2>
+    <p>Laravel adalah framework PHP yang banyak digunakan untuk pengembangan aplikasi web. Berikut adalah contoh routing sederhana di Laravel:</p>
+    <pre>
+/* routes/web.php */
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/hello', function () {
+    return "Hello, Laravel!";
+});
+    </pre>
+    <p>Berikut adalah contoh controller di Laravel:</p>
+    <pre>
+/* app/Http/Controllers/HelloController.php */
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class HelloController extends Controller
+{
+    public function index()
+    {
+        return view('hello');
+    }
+}
+    </pre>
+    <p>Untuk menjalankan aplikasi Laravel, pastikan kamu telah menginstall Composer dan menjalankan perintah berikut di terminal:</p>
+    <pre>
+composer install
+php artisan serve
+    </pre>
+    <p>Aplikasi akan berjalan di <strong>http://localhost:8000</strong> jika kamu menggunakan Laravel's built-in server.</p>
+</div>
+
+    <main class="container">
+        <button onclick="window.location.href='beranda.html'">Back</button>
+    </main>
+         
+</body>
+</html>

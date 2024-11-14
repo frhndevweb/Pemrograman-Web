@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materi.css">
+    <title>Materi C++</title>
+</head>
+<body>
+    <header>
+        <h1>Materi tentang C++</h1>
+    </header>
+    <main class="container">
+        <h2>Pengenalan C++</h2>
+        <p>C++ adalah bahasa pemrograman yang dikembangkan oleh Bjarne Stroustrup pada tahun 1985. C++ adalah bahasa yang berorientasi objek dan merupakan pengembangan dari bahasa C, yang menambahkan fitur-fitur baru seperti kelas dan objek.</p>
+
+        <h2>Sejarah Singkat C++</h2>
+        <p>C++ awalnya dikembangkan sebagai ekstensi dari C untuk mendukung pemrograman berorientasi objek. Seiring berjalannya waktu, C++ telah menjadi salah satu bahasa pemrograman yang paling banyak digunakan di berbagai bidang, termasuk pengembangan perangkat lunak, game, dan aplikasi sistem.</p>
+        
+        <h2>Struktur Dasar Program C++</h2>
+        <pre>
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    return 0;
+}
+        </pre>
+
+        <h2>Elemen Penting dalam C++</h2>
+        <ul>
+            <li>Header Files: File yang menyertakan fungsi standar</li>
+            <li>Main Function: Titik awal eksekusi program</li>
+            <li>Variables: Menyimpan data</li>
+            <li>Data Types: Jenis data (int, float, char, dll.)</li>
+            <li>Control Statements: Struktur kontrol (if, switch, loop)</li>
+            <li>Classes: Mendefinisikan tipe data baru dan metode terkait</li>
+        </ul>
+        
+        <h2>Contoh Penggunaan Variabel dan Loop</h2>
+        <h4>Variabel:</h4>
+        <pre>
+int age = 17;
+string name = "Hannaaffiii";
+        </pre>
+        <h4>Loop:</h4>
+        <pre>
+for (int i = 0; i &lt; 5; i++) {
+    cout &lt;&lt; "Iterasi ke-" &lt;&lt; i &lt;&lt; endl;
+}
+        </pre>
+
+        <h2>Struktur Kontrol</h2>
+        <h4>Contoh If-Else:</h4>
+        <pre>
+if (age >= 17) {
+    cout &lt;&lt; "Dewasa" &lt;&lt; endl;
+} else {
+    cout &lt;&lt; "Anak-anak" &lt;&lt; endl;
+}
+        </pre>
+        
+        <h4>Contoh Switch:</h4>
+        <pre>
+switch (age) {
+    case 17:
+        cout &lt;&lt; "Usia 17 tahun" &lt;&lt; endl;
+        break;
+    default:
+        cout &lt;&lt; "Usia tidak terdefinisi" &lt;&lt; endl;
+}
+        </pre>
+
+        <h2>Fungsi dalam C++</h2>
+        <pre>
+void greet(string name) {
+    cout &lt;&lt; "Hello, " &lt;&lt; name &lt;&lt; "!" &lt;&lt; endl;
+}
+
+// Memanggil fungsi
+greet("Hannaaffiii");
+        </pre>
+
+        <h2>Penanganan Exception</h2>
+        <pre>
+#include &lt;stdexcept&gt;
+
+try {
+    throw runtime_error("Kesalahan terjadi");
+} catch (const runtime_error &amp;e) {
+    cout &lt;&lt; "Exception: " &lt;&lt; e.what() &lt;&lt; endl;
+}
+        </pre>
+
+        <h2>Pemrograman Berorientasi Objek (OOP)</h2>
+        <pre>
+class Person {
+    string name;
+    int age;
+
+public:
+    Person(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        cout &lt;&lt; "Nama: " &lt;&lt; name &lt;&lt; ", Umur: " &lt;&lt; age &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Person hanna("Hannaaffiii", 17);
+    hanna.display();
+}
+        </pre>
+
+        <button onclick="window.location.href='materi.html'">Back</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 hannaaffiii</p>
+    </footer>
+</body>
+</html>
