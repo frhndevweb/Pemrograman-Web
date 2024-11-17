@@ -117,9 +117,24 @@ button:hover {
   color: #555;
 }
 
+/* Tombol Kembali */
 .back-btn {
-  background: #f44336;
+  display: inline-block;
   margin-top: 10px;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: white;
+  background: #f44336;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #d32f2f;
 }
 
 footer p {
