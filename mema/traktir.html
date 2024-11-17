@@ -4,7 +4,152 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Traktir Coffe</title>
-  <link rel="stylesheet" href="bergaya.css">
+  <style>
+    /* Fonts and Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #007bff, #4a90e2);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Container */
+.container {
+  background: #ffffff;
+  color: #333;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+header p {
+  margin: 10px 0 20px;
+  font-size: 1rem;
+  color: #666;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+input[type="number"]:focus {
+  border-color: #0056b3;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.hidden {
+  display: none;
+}
+
+.download-qrcode {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#qrcodeCanvas {
+  margin: 10px auto;
+  display: block;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#download-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+#download-link:hover {
+  background: #0056b3;
+}
+
+
+#qrcode {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.details {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Tombol Kembali */
+.back-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: white;
+  background: #f44336;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #d32f2f;
+}
+
+footer p {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 20px;
+}
+  </style>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
