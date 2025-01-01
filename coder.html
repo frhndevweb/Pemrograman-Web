@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeR</title>
+    <link rel="stylesheet" href="css/coder.css">
+</head>
+<body>
+    <div class="header">
+        <button class="back-button" onclick="window.location.href='beranda.html'">Kembali</button>
+        <h1>Code Editor</h1>
+    </div>
+    <div class="editor-container">
+        <textarea id="html-code" placeholder="HTML Code"></textarea>
+        <textarea id="css-code" placeholder="CSS Code"></textarea>
+        <textarea id="js-code" placeholder="JavaScript Code"></textarea>
+    </div>
+    <button onclick="runCode()" class="run-button">Run Code</button>
+    <div class="output-container">
+        <iframe id="output-frame"></iframe>
+    </div>
+    <script src="js/coder.js"></script>
+</body>
+</html>

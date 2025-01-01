@@ -1,0 +1,80 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9fd;
+    color: #333;
+}
+
+header {
+    background-color: #0d47a1;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.example {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px 10%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.example h2 {
+    color: #0d47a1;
+    font-size: 1.8em;
+    border-bottom: 2px solid #0d47a1;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+pre {
+    background-color: #f1f8ff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    color: #333;
+    overflow-x: auto;
+}
+
+button {
+    background-color: #0d47a1;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1565c0;
+}
+
+.container button {
+    background-color: #1976d2;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container button:hover {
+    background-color: #1565c0;
+}

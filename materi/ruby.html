@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materi.css">
+    <title>Materi Ruby</title>
+</head>
+<body>
+    <header>
+        <h1>Materi tentang Ruby</h1>
+    </header>
+    <main class="container">
+        <h2>Pengenalan Ruby</h2>
+        <p>Ruby adalah bahasa pemrograman dinamis yang terkenal karena kesederhanaan dan produktivitasnya. Ruby dirancang untuk menjadi mudah dipahami dan digunakan, dengan sintaks yang bersih dan elegan.</p>
+
+        <h2>Sejarah Singkat Ruby</h2>
+        <p>Ruby pertama kali dikembangkan oleh Yukihiro Matsumoto (Matz) di Jepang pada tahun 1995. Tujuannya adalah untuk menciptakan bahasa pemrograman yang menggabungkan kelebihan bahasa pemrograman seperti Perl, Smalltalk, dan Ada. Sejak saat itu, Ruby telah berkembang pesat dan menjadi salah satu bahasa yang populer, terutama dalam pengembangan web dengan framework Ruby on Rails.</p>
+        
+        <h2>Struktur Dasar Program Ruby</h2>
+        <p>Program Ruby yang paling sederhana hanya terdiri dari satu baris kode. Berikut ini adalah contoh program Ruby yang mencetak "Hello, World":</p>
+        <pre>
+puts "Hello, World"
+        </pre>
+        <p>Penjelasan:</p>
+        <ul>
+            <li><strong>puts</strong>: Metode yang digunakan untuk mencetak output ke konsol, diakhiri dengan newline.</li>
+        </ul>
+
+        <h2>Fitur Utama Ruby</h2>
+        <p>Berikut ini adalah beberapa fitur utama Ruby yang membuatnya unik:</p>
+        <ul>
+            <li><strong>Objek Sepenuhnya</strong>: Semuanya adalah objek di Ruby, termasuk angka dan nil.</li>
+            <li><strong>Blok dan Procs</strong>: Menyediakan cara untuk menyimpan dan meneruskan kode sebagai parameter.</li>
+            <li><strong>Metaprogramming</strong>: Kemampuan untuk memanipulasi program saat runtime, membuat kode lebih fleksibel.</li>
+            <li><strong>Sintaks yang Elegan</strong>: Sintaks Ruby dirancang untuk kemudahan pembacaan dan penulisan.</li>
+        </ul>
+        
+        <h2>Penggunaan Thread</h2>
+        <p>Ruby mendukung threading, yang memungkinkan eksekusi beberapa bagian kode secara bersamaan. Berikut adalah contoh sederhana penggunaan thread:</p>
+        <pre>
+thread = Thread.new do
+    puts "Hello from thread"
+end
+
+thread.join # Menunggu thread selesai
+puts "Main thread finished"
+        </pre>
+        <p>Dalam contoh ini, kita membuat thread baru dan menjalankan kode di dalam blok. Metode <code>join</code> digunakan untuk menunggu hingga thread selesai eksekusi.</p>
+
+        <h2>Penggunaan Blok dan Procs</h2>
+        <p>Ruby menyediakan fitur blok yang memungkinkan Anda mengirimkan sepotong kode sebagai parameter ke metode. Contoh penggunaan blok:</p>
+        <pre>
+def greet
+    yield "Hello from block"
+end
+
+greet { |message| puts message }
+        </pre>
+        <p>Dalam contoh ini, metode <code>greet</code> menerima blok dan memanggilnya dengan <code>yield</code>.</p>
+
+        <h2>Metaprogramming di Ruby</h2>
+        <p>Ruby mendukung metaprogramming, yang memungkinkan Anda untuk memodifikasi kelas dan objek saat runtime. Contoh metaprogramming sederhana:</p>
+        <pre>
+class DynamicClass
+    define_method(:dynamic_method) do |name|
+        "Hello, #{name}!"
+    end
+end
+
+obj = DynamicClass.new
+puts obj.dynamic_method("Ruby")
+        </pre>
+        <p>Dalam contoh ini, kita menggunakan <code>define_method</code> untuk mendefinisikan metode secara dinamis.</p>
+
+        <h2>Contoh Program Lengkap Ruby</h2>
+        <p>Berikut adalah contoh program Ruby yang lebih kompleks yang menggabungkan berbagai konsep di atas:</p>
+        <pre>
+class Counter
+    def initialize
+        @count = 0
+    end
+
+    def increment
+        @count += 1
+    end
+
+    def display
+        puts "Current count: #{@count}"
+    end
+end
+
+counter = Counter.new
+
+threads = []
+5.times do
+    threads << Thread.new do
+        counter.increment
+        counter.display
+    end
+end
+
+threads.each(&:join) # Menunggu semua thread selesai
+puts "All threads finished"
+        </pre>
+        <p>Program ini mendefinisikan kelas <code>Counter</code> yang memiliki metode untuk mengincrement dan menampilkan nilai. Lima thread dibuat untuk meningkatkan nilai counter dan menampilkannya.</p>
+        
+        <button onclick="window.location.href='materi.html'">Back</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 hannaaffiii</p>
+    </footer>
+</body>
+</html>
