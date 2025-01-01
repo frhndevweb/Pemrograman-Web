@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materi.css">
+    <title>Materi Laravel</title>
+</head>
+<body>
+    <header>
+        <h1>Materi tentang Laravel</h1>
+    </header>
+    <main class="container">
+        <h2>Pengenalan Laravel</h2>
+        <p>Laravel adalah framework PHP berbasis MVC (Model-View-Controller) yang digunakan untuk mempermudah pengembangan aplikasi web. Laravel terkenal karena sintaksnya yang elegan, dokumentasi lengkap, dan kemudahan dalam pembuatan aplikasi dengan fitur-fitur modern.</p>
+
+        <h2>Sejarah Singkat Laravel</h2>
+        <p>Laravel dikembangkan oleh Taylor Otwell pada tahun 2011 sebagai alternatif untuk CodeIgniter, yang memiliki keterbatasan pada fitur yang lebih canggih. Sejak itu, Laravel telah berkembang menjadi salah satu framework PHP paling populer di dunia untuk pengembangan aplikasi web modern.</p>
+        
+        <h2>Struktur Dasar Program Laravel</h2>
+        <p>Struktur dasar Laravel dibangun menggunakan arsitektur MVC, yang memisahkan logika aplikasi menjadi tiga komponen: Model, View, dan Controller. Contoh kode sederhana untuk menampilkan teks "Hello, World" dalam controller:</p>
+        <pre>
+Route::get('/hello', function () {
+    return "Hello, World";
+});
+        </pre>
+        <p>Penjelasan:</p>
+        <ul>
+            <li><strong>Route::get</strong>: Mendefinisikan route HTTP GET untuk URL tertentu.</li>
+            <li><strong>return</strong>: Mengembalikan respon teks ke browser.</li>
+        </ul>
+
+        <h2>Fitur Utama Laravel</h2>
+        <p>Berikut ini adalah beberapa fitur utama Laravel yang membuatnya menonjol:</p>
+        <ul>
+            <li><strong>Routing yang Fleksibel</strong>: Laravel menyediakan routing yang mudah dan fleksibel.</li>
+            <li><strong>Eloquent ORM</strong>: ORM Laravel memungkinkan interaksi dengan database menggunakan sintaks PHP tanpa menulis query SQL secara langsung.</li>
+            <li><strong>Blade Templating</strong>: Mesin template yang ringan dan kuat untuk mengatur tampilan.</li>
+            <li><strong>Pengelolaan Database Migrations</strong>: Memudahkan pengelolaan struktur database dengan migrations.</li>
+        </ul>
+        
+        <h2>Penggunaan Middleware</h2>
+        <p>Middleware di Laravel digunakan untuk memfilter request HTTP. Contoh sederhana middleware yang memeriksa autentikasi pengguna:</p>
+        <pre>
+public function handle($request, Closure $next)
+{
+    if (!Auth::check()) {
+        return redirect('login');
+    }
+    return $next($request);
+}
+        </pre>
+        <p>Dalam contoh ini, middleware akan memeriksa apakah pengguna sudah login. Jika tidak, pengguna akan diarahkan ke halaman login.</p>
+
+        <h2>Blade Templating</h2>
+        <p>Blade adalah sistem templating bawaan Laravel yang memungkinkan kita menggunakan sintaks yang bersih dan sederhana. Contoh penggunaan Blade:</p>
+        <pre>
+@extends('layouts.app')
+
+@section('content')
+    <h1>Hello, World</h1>
+@endsection
+        </pre>
+        <p>Dalam contoh ini, Blade menggunakan <code>@extends</code> untuk menggabungkan template dan <code>@section</code> untuk mendefinisikan bagian konten.</p>
+
+        <h2>Eloquent ORM</h2>
+        <p>Laravel menggunakan Eloquent ORM untuk berinteraksi dengan database. Contoh penggunaan Eloquent untuk mendapatkan data dari tabel <code>users</code>:</p>
+        <pre>
+$users = User::all();
+
+foreach ($users as $user) {
+    echo $user->name;
+}
+        </pre>
+        <p>Dalam contoh ini, Eloquent mengambil semua data pengguna dari tabel <code>users</code> dan menampilkan nama setiap pengguna.</p>
+
+        <h2>Contoh Program Lengkap Laravel</h2>
+        <p>Berikut adalah contoh sederhana program Laravel yang menggunakan fitur-fitur dasar di atas:</p>
+        <pre>
+// Route
+Route::get('/users', 'UserController@index');
+
+// Controller
+class UserController extends Controller
+{
+    public function index()
+    {
+        $users = User::all();
+        return view('users.index', compact('users'));
+    }
+}
+
+// View (users/index.blade.php)
+@foreach ($users as $user)
+    <p>{{ $user->name }}</p>
+@endforeach
+        </pre>
+        <p>Contoh ini mendefinisikan sebuah route untuk mengambil data dari tabel <code>users</code> dan menampilkannya menggunakan view Blade.</p>
+        
+        <button onclick="window.location.href='index.html'">Back</button>
+Back</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 hannaaffiii</p>
+    </footer>
+</body>
+</html>
