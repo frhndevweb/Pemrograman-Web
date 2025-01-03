@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuis Pemrograman Web</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Kuis Pemrograman Web</h1>
+    <div id="quiz">
+      <div id="live-score">Skor saat ini: 0</div>
+      <div id="question"></div>
+      <div id="choices"></div>
+      <button id="next-button">Selanjutnya</button>
+    </div>
+    <div id="result" style="display: none;">
+      <h2>Hasil Akhir</h2>
+      <p id="score"></p>
+      <button onclick="restartQuiz()">Main Lagi</button>
+    </div>
+  </div>
+  <button class="quiz-container kembali-button" onclick="window.location.href='../beranda.html'">Kembali</button>
+  <script src="script.js"></script>
+</body>
+</html>
