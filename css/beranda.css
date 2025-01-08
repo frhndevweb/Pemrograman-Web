@@ -1,4 +1,3 @@
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +17,6 @@ body {
     margin: 0 auto;
 }
 
-/* Header Styles */
 header {
     background: linear-gradient(135deg, #007acc, #00b0ff);
     color: white;
@@ -39,10 +37,26 @@ header p {
     margin-top: 10px;
 }
 
-/* Navigation Styles */
 nav {
-    background-color: #005b99;
+    background-color: rgba(0, 91, 153, 0.8);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+nav .hamburger {
+    display: none;
+    font-size: 1.5rem;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: color 0.3s;
+}
+
+nav .hamburger:hover {
+    color: #ffcc00;
 }
 
 nav ul {
@@ -50,6 +64,8 @@ nav ul {
     justify-content: center;
     list-style: none;
     padding: 20px 0;
+    background-color: rgba(0, 91, 153, 0.9);
+    transition: background-color 0.3s;
 }
 
 nav ul li {
@@ -68,7 +84,6 @@ nav ul li a:hover {
     color: #ffcc00;
 }
 
-/* Main Content Styles */
 main {
     padding: 60px 0;
 }
@@ -130,7 +145,6 @@ ul li a:hover {
     transform: translateY(-3px);
 }
 
-/* Footer Styles */
 footer {
     background-color: #007acc;
     color: white;
@@ -143,22 +157,50 @@ footer p {
     font-size: 1.1rem;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2.8rem;
+    nav .hamburger {
+        display: block;
     }
 
     nav ul {
+        display: none;
         flex-direction: column;
-        padding: 15px 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 20px 0;
+    }
+
+    nav ul.show {
+        display: flex;
     }
 
     nav ul li {
         margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        color: white;
+    }
+
+    header h1 {
+        font-size: 2.8rem;
     }
 
     section {
         padding: 25px;
+    }
+}
+
+@media (min-width: 769px) {
+    nav ul {
+        display: flex;
+    }
+
+    nav .hamburger {
+        display: none;
     }
 }
