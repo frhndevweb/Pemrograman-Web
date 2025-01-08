@@ -17,6 +17,7 @@
 
     <nav>
         <div class="container">
+            <div class="hamburger">☰</div>
             <ul>
                 <li><a href="update.html">Info</a></li>
                 <li><a href="#materi">Materi</a></li>
@@ -29,10 +30,11 @@
             </ul>
         </div>
     </nav>
+    
 
     <main>
         <div class="container">
-            <section id="Materi" class="card">
+            <section id="-" class="card">
                 <h2>Apa itu Pemrograman Web?</h2>
                 <p>sebelum belajar kode-kode yang digunakan untuk membuat sebuah website, penting banget buat tau dulu apa itu pemrograman web.
                     pemrograman web adalah proses membuat dan mengembangkan sebuah website menggunakan berbagai bahasa dan teknologi, baik untuk tampilan depan (front-end) maupun fungsi belakang (back-end).
@@ -92,7 +94,7 @@
             </section>
 
             <section id="web" class="card">
-                <a href="https://upuimg.kesug.com" target="_blank" class="btn">Upuimg</a>
+                <a href="https://upuimg.kesug.com" target="_blank" class="btn">Web Server</a>
                 <a href="https://frhndevweb.netlify.app" target="_blank" class="btn">Website</a>
                 <a href="https://fhstore.netlify.app" target="_blank" class ="btn">Web Store</a>
                 <a href="traktir.html" target="_blank" class="btn">Traktir</a>
@@ -104,7 +106,6 @@
                 <p>Email: frhndevweb@gmail.com</p>
                 <p>WhatsApp: +62 822-4100-3726</p>
             </section>
-            
         </div>
     </main>
 
@@ -114,9 +115,14 @@
         </div>
     </footer>
     <script>
-        if (document.referrer.includes('index.html')) {
-            window.location.href = 'beranda.html';
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    });
     </script>
 </body>
 </html>
