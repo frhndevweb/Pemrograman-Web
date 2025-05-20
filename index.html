@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pemrograman Web - Maintenance</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: "Poppins", sans-serif;
             background-color: #f8fafc;
-        }
-        .countdown-number {
-            transition: all 0.3s ease;
         }
         .btn-new-app {
             transform: scale(0);
-            transition: transform 0.5s ease, background-color 0.3s ease;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
         .btn-new-app.active {
             transform: scale(1);
+            opacity: 1;
         }
         .pulse {
             animation: pulse 2s infinite;
@@ -28,141 +33,303 @@
         @keyframes pulse {
             0% {
                 transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
             }
-            50% {
+            70% {
                 transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
             }
             100% {
                 transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
             }
+        }
+        .progress-bar {
+            height: 6px;
+            border-radius: 3px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            width: 0;
+            transition: width 0.5s ease;
+        }
+        .countdown {
+            font-family: monospace;
+            font-size: 1.5rem;
+            background: #1e293b;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+        .floating-notification {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        .floating-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .download-btn {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+        }
+        .download-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+        .download-btn:hover::after {
+            transform: translateY(0);
         }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center bg-gray-50">
-    <div class="max-w-4xl w-full mx-4 bg-white rounded-xl shadow-xl overflow-hidden">
+    <!-- Floating Notification -->
+    <div id="floatingNotification" class="floating-notification hidden md:block">
+        <div class="flex items-center">
+            <div class="mr-3 text-blue-500">
+                <i class="fas fa-bell text-xl"></i>
+            </div>
+            <div>
+                <p class="text-sm font-medium text-gray-800">Aplikasi baru akan segera hadir!</p>
+                <p class="text-xs text-gray-500">Kami sedang mempersiapkan pengalaman terbaik untuk Anda</p>
+            </div>
+            <button onclick="closeNotification()" class="ml-4 text-gray-400 hover:text-gray-600">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="max-w-4xl w-full mx-4 bg-white rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl">
         <div class="md:flex">
-            <div class="md:w-1/3 bg-navy-900 p-8 flex flex-col items-center justify-center bg-gradient-to-b from-blue-900 to-blue-800 text-white">
+            <div
+                class="md:w-1/3 p-8 flex flex-col items-center justify-center bg-gradient-to-br from-blue-900 to-indigo-900 text-white"
+            >
                 <div class="text-center">
-                    <i class="fas fa-server text-6xl mb-6 text-blue-300"></i>
+                    <div class="relative inline-block mb-6">
+                        <i class="fas fa-server text-6xl text-blue-300 pulse"></i>
+                        <div class="absolute -top-2 -right-2 bg-yellow-400 rounded-full w-6 h-6 flex items-center justify-center">
+                            <span class="text-xs font-bold text-gray-900">!</span>
+                        </div>
+                    </div>
                     <h2 class="text-2xl font-bold mb-2">Migrasi Sistem</h2>
-                    <p class="text-blue-200">Kami sedang meningkatkan pengalaman belajar Anda</p>
+                    <p class="text-blue-200 max-w-xs">
+                        Kami sedang meningkatkan pengalaman belajar Anda dengan teknologi terbaru
+                    </p>
                 </div>
                 <div class="mt-8 w-full">
-                    <div class="bg-blue-800 bg-opacity-50 rounded-lg p-4 text-center">
-                        <h3 class="text-sm font-semibold text-blue-200 mb-1">STATUS</h3>
-                        <div class="flex items-center justify-center">
-                            <span class="h-2 w-2 rounded-full bg-yellow-400 mr-2"></span>
+                    <div
+                        class="bg-blue-800 bg-opacity-50 rounded-lg p-4 text-center border border-blue-700"
+                    >
+                        <h3 class="text-sm font-semibold text-blue-200 mb-1">
+                            STATUS
+                        </h3>
+                        <div
+                            class="flex items-center justify-center"
+                        >
+                            <span
+                                class="h-2 w-2 rounded-full bg-yellow-400 mr-2 animate-ping"
+                            ></span>
                             <span class="text-sm font-medium">MAINTENANCE</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full mt-6">
+                    <div class="text-xs text-blue-200 mb-1 text-left">Progress Migrasi</div>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <div id="progressText" class="text-xs text-blue-200 mt-1 text-right">0%</div>
+                </div>
             </div>
-            
+
             <div class="md:w-2/3 p-8 md:p-12">
                 <div class="flex items-center mb-6">
-                    <i class="fas fa-hammer text-yellow-500 text-2xl mr-3"></i>
-                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Aplikasi Pemrograman Web sedang dalam proses penutupan</h1>
+                    <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-hammer text-yellow-500 text-xl"></i>
+                    </div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
+                        Aplikasi Pemrograman Web sedang dalam proses migrasi
+                    </h1>
                 </div>
-                
-                <p class="text-gray-600 mb-8">
+
+                <p class="text-gray-600 mb-6">
                     Kami sedang memigrasikan seluruh data dan fitur ke platform baru untuk pengalaman belajar yang lebih baik. 
-                    Aplikasi baru akan segera tersedia dalam waktu:
+                    Aplikasi baru akan segera tersedia dengan antarmuka yang lebih modern dan fitur yang lebih lengkap.
                 </p>
-                
-                <div class="bg-gray-50 rounded-xl p-6 mb-8 border border-gray-200">
-                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Waktu Tersisa</h3>
-                    <div class="grid grid-cols-4 gap-4 text-center">
-                        <div class="bg-white p-4 rounded-lg shadow-sm">
-                            <div class="text-3xl font-bold text-blue-600 countdown-number" id="days">00</div>
-                            <div class="text-xs text-gray-500 mt-1">Hari</div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-circle text-yellow-400"></i>
                         </div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm">
-                            <div class="text-3xl font-bold text-blue-600 countdown-number" id="hours">00</div>
-                            <div class="text-xs text-gray-500 mt-1">Jam</div>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm">
-                            <div class="text-3xl font-bold text-blue-600 countdown-number" id="minutes">00</div>
-                            <div class="text-xs text-gray-500 mt-1">Menit</div>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm">
-                            <div class="text-3xl font-bold text-blue-600 countdown-number" id="seconds">00</div>
-                            <div class="text-xs text-gray-500 mt-1">Detik</div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-medium">Perhatian:</span> Aplikasi lama tidak dapat diakses selama proses migrasi. Semua data akan tetap aman.
+                            </p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="text-center">
                     <div class="text-sm text-gray-500 mb-4">
-                        <i class="fas fa-info-circle mr-1"></i> Aplikasi baru akan otomatis tersedia ketika countdown selesai
+                        <i class="fas fa-clock mr-1"></i> Aplikasi tersedia
                     </div>
-                    
-                    <a href="https://appbaru.hannaaffiii.web.app" id="newAppBtn" 
-                       class="btn-new-app inline-block px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 transform scale-0 opacity-0">
+
+                    <a
+                        class="btn-new-app inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 shadow-lg"
+                    >
                         <i class="fas fa-external-link-alt mr-2"></i> Buka Aplikasi Baru
                     </a>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+                        <a
+                            href="src/pemrograman-web.apk"
+                            download="src/pemrograman-web.apk"
+                            class="download-btn inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition"
+                        >
+                            <i class="fab fa-android mr-2 text-2xl"></i> 
+                            <div class="text-left">
+                                <div class="text-xs">Download untuk</div>
+                                <div class="font-medium">Android</div>
+                            </div>
+                        </a>
+                        <a
+                            href="src/pemrograman-web.tar.gz"
+                            download="pemrograman-web.tar.gz"
+                            class="download-btn inline-flex items-center px-6 py-3 bg-gray-800 text-white rounded-lg shadow hover:bg-gray-900 transition"
+                        >
+                            <i class="fab fa-apple mr-2 text-2xl"></i>
+                            <div class="text-left">
+                                <div class="text-xs">Download untuk</div>
+                                <div class="font-medium">iOS</div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <p class="mt-3 text-sm text-gray-500">
+                        <i class="fas fa-info-circle mr-1"></i> Pilih sesuai perangkat Anda dan instal aplikasi secara manual setelah pengunduhan.
+                    </p>
                 </div>
             </div>
         </div>
-        
-        <div class="bg-gray-50 px-8 py-4 border-t border-gray-200 text-center text-sm text-gray-500">
+
+        <div
+            class="bg-gray-50 px-8 py-4 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500"
+        >
             <p>© 2023 Pemrograman Web. All rights reserved.</p>
+            <div class="mt-2 md:mt-0 flex space-x-4">
+                <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-pink-600 transition"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set the date we're counting down to (2 days from now)
-            const countDownDate = new Date();
-            countDownDate.setDate(countDownDate.getDate() + 2);
+        // Show floating notification after delay
+        setTimeout(() => {
+            document.getElementById('floatingNotification').classList.add('show');
+        }, 2000);
+
+        function closeNotification() {
+            document.getElementById('floatingNotification').classList.remove('show');
+        }
+
+        // Simulate progress bar
+        let progress = 0;
+        const progressInterval = setInterval(() => {
+            progress += Math.random() * 5;
+            if (progress > 100) progress = 100;
+            document.getElementById('progressFill').style.width = `${progress}%`;
+            document.getElementById('progressText').textContent = `${Math.round(progress)}%`;
             
-            // Update the count down every 1 second
-            const x = setInterval(function() {
-                // Get today's date and time
-                const now = new Date().getTime();
-                
-                // Find the distance between now and the count down date
-                const distance = countDownDate - now;
-                
-                // Time calculations for days, hours, minutes and seconds
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                // Display the result
-                document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
-                document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
-                document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
-                document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
-                
-                // If the count down is finished
-                if (distance < 0) {
-                    clearInterval(x);
-                    
-                    // Show the button
-                    const btn = document.getElementById("newAppBtn");
-                    btn.classList.remove("scale-0", "opacity-0");
-                    btn.classList.add("scale-100", "opacity-100", "pulse");
-                    
-                    // Update the countdown display
-                    document.getElementById("days").innerHTML = "00";
-                    document.getElementById("hours").innerHTML = "00";
-                    document.getElementById("minutes").innerHTML = "00";
-                    document.getElementById("seconds").innerHTML = "00";
-                }
-            }, 1000);
+            if (progress >= 100) {
+                clearInterval(progressInterval);
+            }
+        }, 500);
+
+        // Countdown timer (3 hours)
+        let countdownDate = new Date();
+        countdownDate.setHours(countdownDate.getHours() + 3);
+
+        const countdown = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
             
-            // Add animation to countdown numbers
-            const countdownNumbers = document.querySelectorAll('.countdown-number');
-            setInterval(() => {
-                countdownNumbers.forEach(num => {
-                    num.classList.add('animate-pulse');
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById('countdown').textContent = "Aplikasi siap digunakan!";
+                document.getElementById('newAppBtn').classList.add('active');
+                
+                // Show confetti effect
+                const colors = ['#3b82f6', '#8b5cf6', '#ec4899', '#f43f5e', '#f59e0b'];
+                
+                for (let i = 0; i < 100; i++) {
                     setTimeout(() => {
-                        num.classList.remove('animate-pulse');
-                    }, 300);
-                });
-            }, 1000);
-        });
+                        const confetti = document.createElement('div');
+                        confetti.style.position = 'fixed';
+                        confetti.style.width = '10px';
+                        confetti.style.height = '10px';
+                        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                        confetti.style.borderRadius = '50%';
+                        confetti.style.left = Math.random() * window.innerWidth + 'px';
+                        confetti.style.top = '-10px';
+                        confetti.style.zIndex = '9999';
+                        confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                        
+                        document.body.appendChild(confetti);
+                        
+                        const animation = confetti.animate([
+                            { top: '-10px', opacity: 1 },
+                            { top: window.innerHeight + 'px', opacity: 0 }
+                        ], {
+                            duration: 2000 + Math.random() * 3000,
+                            easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
+                        });
+                        
+                        animation.onfinish = () => {
+                            confetti.remove();
+                        };
+                    }, i * 20);
+                }
+            }
+        }, 1000);
     </script>
 </body>
 </html>
