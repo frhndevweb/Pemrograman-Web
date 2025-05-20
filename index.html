@@ -5,14 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pemrograman Web - Maintenance</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <style>
         body {
             font-family: "Poppins", sans-serif;
@@ -31,18 +25,9 @@
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
-            }
-            70% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
-            }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
         }
         .progress-bar {
             height: 6px;
@@ -109,6 +94,7 @@
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center bg-gray-50">
+
     <!-- Floating Notification -->
     <div id="floatingNotification" class="floating-notification hidden md:block">
         <div class="flex items-center">
@@ -127,9 +113,7 @@
 
     <div class="max-w-4xl w-full mx-4 bg-white rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl">
         <div class="md:flex">
-            <div
-                class="md:w-1/3 p-8 flex flex-col items-center justify-center bg-gradient-to-br from-blue-900 to-indigo-900 text-white"
-            >
+            <div class="md:w-1/3 p-8 flex flex-col items-center justify-center bg-gradient-to-br from-blue-900 to-indigo-900 text-white">
                 <div class="text-center">
                     <div class="relative inline-block mb-6">
                         <i class="fas fa-server text-6xl text-blue-300 pulse"></i>
@@ -142,19 +126,13 @@
                         Kami sedang meningkatkan pengalaman belajar Anda dengan teknologi terbaru
                     </p>
                 </div>
+
+                <!-- Status -->
                 <div class="mt-8 w-full">
-                    <div
-                        class="bg-blue-800 bg-opacity-50 rounded-lg p-4 text-center border border-blue-700"
-                    >
-                        <h3 class="text-sm font-semibold text-blue-200 mb-1">
-                            STATUS
-                        </h3>
-                        <div
-                            class="flex items-center justify-center"
-                        >
-                            <span
-                                class="h-2 w-2 rounded-full bg-yellow-400 mr-2 animate-ping"
-                            ></span>
+                    <div class="bg-blue-800 bg-opacity-50 rounded-lg p-4 text-center border border-blue-700">
+                        <h3 class="text-sm font-semibold text-blue-200 mb-1">STATUS</h3>
+                        <div class="flex items-center justify-center">
+                            <span class="h-2 w-2 rounded-full bg-yellow-400 mr-2 animate-ping"></span>
                             <span class="text-sm font-medium">MAINTENANCE</span>
                         </div>
                     </div>
@@ -203,29 +181,19 @@
                         <i class="fas fa-clock mr-1"></i> Aplikasi tersedia
                     </div>
 
-                    <a
-                        class="btn-new-app inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 shadow-lg"
-                    >
+                    <a class="btn-new-app inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 shadow-lg">
                         <i class="fas fa-external-link-alt mr-2"></i> Buka Aplikasi Baru
                     </a>
 
-                    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-                        <a
-                            href="src/pemrograman-web.apk"
-                            download="src/pemrograman-web.apk"
-                            class="download-btn inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition"
-                        >
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-2 mt-6">
+                        <a href="src/pemrograman-web.apk" download="src/pemrograman-web.apk" class="download-btn inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition">
                             <i class="fab fa-android mr-2 text-2xl"></i> 
                             <div class="text-left">
                                 <div class="text-xs">Download untuk</div>
                                 <div class="font-medium">Android</div>
                             </div>
                         </a>
-                        <a
-                            href="src/pemrograman-web.tar.gz"
-                            download="pemrograman-web.tar.gz"
-                            class="download-btn inline-flex items-center px-6 py-3 bg-gray-800 text-white rounded-lg shadow hover:bg-gray-900 transition"
-                        >
+                        <a href="src/pemrograman-web.tar.gz" download="pemrograman-web.tar.gz" class="download-btn inline-flex items-center px-6 py-3 bg-gray-800 text-white rounded-lg shadow hover:bg-gray-900 transition">
                             <i class="fab fa-apple mr-2 text-2xl"></i>
                             <div class="text-left">
                                 <div class="text-xs">Download untuk</div>
@@ -233,103 +201,44 @@
                             </div>
                         </a>
                     </div>
-                    
-                    <p class="mt-3 text-sm text-gray-500">
-                        <i class="fas fa-info-circle mr-1"></i> Pilih sesuai perangkat Anda dan instal aplikasi secara manual setelah pengunduhan.
-                    </p>
-                </div>
-            </div>
-        </div>
 
-        <div
-            class="bg-gray-50 px-8 py-4 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500"
-        >
-            <p>© 2023 Pemrograman Web. All rights reserved.</p>
-            <div class="mt-2 md:mt-0 flex space-x-4">
-                <a href="https://tiktok.com/@hannaaffiii" class="hover:text-blue-600 transition"><i class="fab fa-tiktok"></i></a>
-                <a href="https://x.com/hannaaffiii" class="hover:text-blue-400 transition"><i class="fab fa-x"></i></a>
-                <a href="https://instagram.com/hannaaffiii" class="hover:text-pink-600 transition"><i class="fab fa-instagram"></i></a>
+                    <!-- Tambahan info jika tidak bisa download -->
+                    <p class="mt-3 text-sm text-gray-500">
+                        <i class="fas fa-info-circle mr-1"></i> Jika tidak bisa mendownload, klik tombol ini:
+                    </p>
+                    <a href="https://drive.google.com/drive/folders/1AuKkimXQzASvdyxTLHtkbFaejN11S1dU?usp=sharing" target="_blank" class="inline-block mt-2 px-5 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
+                        Link Alternatif Download
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Show floating notification after delay
-        setTimeout(() => {
-            document.getElementById('floatingNotification').classList.add('show');
-        }, 2000);
-
         function closeNotification() {
-            document.getElementById('floatingNotification').classList.remove('show');
+            document.getElementById("floatingNotification").classList.remove("show");
         }
 
-        // Simulate progress bar
+        // Simulasi progress
         let progress = 0;
-        const progressInterval = setInterval(() => {
-            progress += Math.random() * 5;
-            if (progress > 100) progress = 100;
-            document.getElementById('progressFill').style.width = `${progress}%`;
-            document.getElementById('progressText').textContent = `${Math.round(progress)}%`;
-            
+        const progressFill = document.getElementById("progressFill");
+        const progressText = document.getElementById("progressText");
+
+        const interval = setInterval(() => {
             if (progress >= 100) {
-                clearInterval(progressInterval);
+                clearInterval(interval);
+                document.querySelector('.btn-new-app').classList.add('active');
+                return;
             }
-        }, 500);
+            progress += 1;
+            progressFill.style.width = progress + "%";
+            progressText.textContent = progress + "%";
+        }, 100);
 
-        // Countdown timer (3 hours)
-        let countdownDate = new Date();
-        countdownDate.setHours(countdownDate.getHours() + 3);
-
-        const countdown = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
-            
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-            
-            if (distance < 0) {
-                clearInterval(countdown);
-                document.getElementById('countdown').textContent = "Aplikasi siap digunakan!";
-                document.getElementById('newAppBtn').classList.add('active');
-                
-                // Show confetti effect
-                const colors = ['#3b82f6', '#8b5cf6', '#ec4899', '#f43f5e', '#f59e0b'];
-                
-                for (let i = 0; i < 100; i++) {
-                    setTimeout(() => {
-                        const confetti = document.createElement('div');
-                        confetti.style.position = 'fixed';
-                        confetti.style.width = '10px';
-                        confetti.style.height = '10px';
-                        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                        confetti.style.borderRadius = '50%';
-                        confetti.style.left = Math.random() * window.innerWidth + 'px';
-                        confetti.style.top = '-10px';
-                        confetti.style.zIndex = '9999';
-                        confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
-                        
-                        document.body.appendChild(confetti);
-                        
-                        const animation = confetti.animate([
-                            { top: '-10px', opacity: 1 },
-                            { top: window.innerHeight + 'px', opacity: 0 }
-                        ], {
-                            duration: 2000 + Math.random() * 3000,
-                            easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
-                        });
-                        
-                        animation.onfinish = () => {
-                            confetti.remove();
-                        };
-                    }, i * 20);
-                }
-            }
-        }, 1000);
+        // Tampilkan notifikasi mengambang setelah beberapa detik
+        setTimeout(() => {
+            document.getElementById("floatingNotification").classList.add("show");
+        }, 3000);
     </script>
 </body>
 </html>
